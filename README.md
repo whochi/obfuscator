@@ -1,8 +1,10 @@
-Please have a look at the [wiki](https://github.com/obfuscator-llvm/obfuscator/wiki)!
+This repository is forked from spelle.[SPELLE](https://github.com/spelle/obfuscator)
+
+lease have a look at the [wiki](https://github.com/obfuscator-llvm/obfuscator/wiki)!
 
 Current (official) version: [LLVM-4.0](https://github.com/obfuscator-llvm/obfuscator/tree/llvm-4.0)
 
-Current version on this repo is [LLVM-8.0.0](https://github.com/spelle/obfuscator/tree/llvm-8.0.0)
+Current version(from spelle's reposit) on this repo is [LLVM-8.0.0](https://github.com/spelle/obfuscator/tree/llvm-8.0.0)
 
 You can cite Obfuscator-LLVM using the following Bibtex entry:
 
@@ -28,6 +30,7 @@ git clone https://github.com/spelle/obfuscator -b llvm-8.0.0 obfuscator-llvm-8.0
 ```
 
   ## Retrieve dependencies
+  If it failed to download, you shoud directly download from http://releases.llvm.org/8.0.0 each items.
 
 ```
 curl -E -fsSL http://releases.llvm.org/8.0.0/cfe-8.0.0.src.tar.xz -o cfe-8.0.0.src.tar.xz && \
@@ -118,7 +121,22 @@ sudo ninja install-xcode-toolchain
 
 The toolchain is generated and installed in `/usr/local/Toolchains/LLVM8.0.0.xctoolchain`
 
+And then, copy to xcode toolchain folder.
+
+```
+sudo cp -rf /usr/local/Toolchains/LLVM8.0.0.xctoolchain ~/Library/Developer/Toolchains/.`
+```
+
+sync from xcode default toolchain to o-llvm toolchain.
+(IMPORTANT!!! : you must typed "/" after "XcodeDefault.xctoolchain" and "LLVM8.0.0.xctoolchain")
+
+```
+rsync -a --ignore-existing /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/ ~/Library/Developer/Toolchains/LLVM8.0.0.xctoolchain/
+```
+
+
 You need to instruct XCode to actually use the toolchain. You can do so in two ways: from your environment variables, and through the XCode app itself.
+I preferred to select toolchains in xcode.
 
 To set it through an environment variable:
 
