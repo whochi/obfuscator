@@ -132,9 +132,16 @@ sync from xcode default toolchain to o-llvm toolchain.
 IMPORTANT!!! : you must typed "/" after "XcodeDefault.xctoolchain" and "LLVM8.0.0.xctoolchain"
 
 ```
-rsync -a --ignore-existing /Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/ ~/Library/Developer/Toolchains/LLVM8.0.0.xctoolchain/
+sudo rsync -a --ignore-existing \
+/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/ \
+~/Library/Developer/Toolchains/LLVM8.0.0.xctoolchain/
 ```
 
+Finally, remove ToolchainInfo.plist in o-llvm
+
+```
+sudo rm -rf ~/Library/Developer/Toolchains/LLVM8.0.0.xctoolchain/ToolchainInfo.plist 
+```
 
 You need to instruct XCode to actually use the toolchain. You can do so in two ways: from your environment variables, and through the XCode app itself.
 
