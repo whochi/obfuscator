@@ -37,7 +37,7 @@ static cl::opt<std::string> AesSeed(
   cl::desc("seed for the AES-CTR PRNG"));
 
 static cl::opt<bool> Split(
-  "spli", cl::init(false),
+  "split", cl::init(false),
   cl::desc("Enable basic block splitting"));
 
 static cl::opt<std::string> Seed("seed", cl::init(""),
