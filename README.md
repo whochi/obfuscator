@@ -26,7 +26,7 @@ You can cite Obfuscator-LLVM using the following Bibtex entry:
   ## Clone the repo
 
 ```
-git clone https://github.com/spelle/obfuscator -b llvm-8.0.0 obfuscator-llvm-8.0.0.src
+git clone https://github.com/whochi/obfuscator -b llvm-8.0.0 obfuscator-llvm-8.0.0.src
 ```
 
   ## Retrieve dependencies
