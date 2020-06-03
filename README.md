@@ -124,7 +124,7 @@ The toolchain is generated and installed in `/usr/local/Toolchains/LLVM8.0.0.xct
 And then, copy to xcode toolchain folder.
 
 ```
-sudo cp -rf /usr/local/Toolchains/LLVM8.0.0.xctoolchain ~/Library/Developer/Toolchains/.`
+sudo cp -rf /usr/local/Toolchains/LLVM8.0.0.xctoolchain ~/Library/Developer/Toolchains/.
 ```
 
 sync from xcode default toolchain to o-llvm toolchain.
